@@ -5,13 +5,13 @@ import { MakeGuess } from "./MakeGuess";
 import React from "react";
 import { render } from "@testing-library/react";
 
-const helpText = "Invite other players to join the game.";
-test("Should show help text when more players are needed", () => {
+const helpText = "Hívj meg más játékosokat is.";
+test("Mutatni kell a szöveget, ha több játékosra van szükség", () => {
   const gameState: GameState = {
     ...InitialGameState(),
     players: {
       player1: {
-        name: "Player 1",
+        name: "Játékos 1",
         team: Team.Left,
       },
     },
@@ -30,16 +30,16 @@ test("Should show help text when more players are needed", () => {
   expect(subject).toBeInTheDocument();
 });
 
-test("Should show help text when more players are needed", () => {
+test("Mutatni kell a szöveget, ha több játékosra van szükség", () => {
   const gameState: GameState = {
     ...InitialGameState(),
     players: {
       player1: {
-        name: "Player 1",
+        name: "Játékos 1",
         team: Team.Left,
       },
       player2: {
-        name: "Player 2",
+        name: "Játékos 2",
         team: Team.Left,
       },
     },
@@ -58,16 +58,16 @@ test("Should show help text when more players are needed", () => {
   expect(subject).not.toBeInTheDocument();
 });
 
-test("Should show button to submit your team's guess", () => {
+test("A csapat tippjét beküldő gombnak látszania kell", () => {
   const gameState: GameState = {
     ...InitialGameState(),
     players: {
       player1: {
-        name: "Player 1",
+        name: "Játékos 1",
         team: Team.Left,
       },
       player2: {
-        name: "Player 2",
+        name: "Játékos 2",
         team: Team.Left,
       },
     },
@@ -82,7 +82,7 @@ test("Should show button to submit your team's guess", () => {
     </GameModelContext.Provider>
   );
 
-  const subject = component.getByText("Submit Guess for LEFT BRAIN");
+  const subject = component.getByText("A BAL AGYFÉLEKE tippjének beküldése");
 
   expect(subject).toBeInTheDocument();
 });

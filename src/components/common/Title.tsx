@@ -20,7 +20,7 @@ export function LongwaveAppTitle() {
         WebkitTextFillColor: "transparent",
       }}
     >
-      Longwave
+      Hosszúhullám
     </h1>
   );
 }

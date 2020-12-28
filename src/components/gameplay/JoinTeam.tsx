@@ -37,7 +37,7 @@ export function JoinTeam() {
   return (
     <CenteredColumn>
       <LongwaveAppTitle />
-      <div>Join Team:</div>
+      <div>Csapatválasztás:</div>
       <CenteredRow
         style={{
           alignItems: "flex-start",
@@ -50,7 +50,7 @@ export function JoinTeam() {
             <div key={playerId}>{gameState.players[playerId].name}</div>
           ))}
           <div>
-            <Button text="Join" onClick={() => joinTeam(Team.Left)} />
+            <Button text="Csatlakozás" onClick={() => joinTeam(Team.Left)} />
           </div>
         </CenteredColumn>
         <CenteredColumn>
@@ -59,12 +59,12 @@ export function JoinTeam() {
             <div key={playerId}>{gameState.players[playerId].name}</div>
           ))}
           <div>
-            <Button text="Join" onClick={() => joinTeam(Team.Right)} />
+            <Button text="Csatlakozás" onClick={() => joinTeam(Team.Right)} />
           </div>
         </CenteredColumn>
       </CenteredRow>
       {gameState.roundPhase === RoundPhase.PickTeams && (
-        <Button text="Start Game" onClick={startGame} />
+        <Button text="Játék indítása" onClick={startGame} />
       )}
     </CenteredColumn>
   );

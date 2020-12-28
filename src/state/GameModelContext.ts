@@ -6,7 +6,7 @@ export const GameModelContext = createContext<GameModel>({
   gameState: InitialGameState(),
   localPlayer: {
     id: "localPlayer",
-    name: "Player",
+    name: "Játékos",
     team: Team.Unset,
   },
   clueGiver: null,

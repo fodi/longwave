@@ -9,14 +9,14 @@ const onePlayerGame: GameState = {
   ...InitialGameState(),
   players: {
     playerId: {
-      name: "Player",
+      name: "Játékos",
       team: Team.Left,
     },
   },
   clueGiver: "playerId",
 };
 
-test("Applies 4 points for a perfect guess", () => {
+test("A tökéletes tippért 4 pont jár", () => {
   const gameState = {
     ...onePlayerGame,
     spectrumTarget: 1,
@@ -31,7 +31,7 @@ test("Applies 4 points for a perfect guess", () => {
     </GameModelContext.Provider>
   );
 
-  const subject = component.getByText("Score: 4 points!");
+  const subject = component.getByText("Eredmény: 4 pont!");
   expect(subject).toBeInTheDocument();
 });
 

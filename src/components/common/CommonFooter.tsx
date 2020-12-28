@@ -14,20 +14,24 @@ export function CommonFooter() {
       }}
     >
       <p style={{ margin: 8 }}>
-        <Link href="https://www.wavelength.zone/" text="Wavelength" /> is
-        designed by Wolfgang Warsch, Alex Hague, and Justin Vickers.{" "}
+        A <Link href="https://www.wavelength.zone/" text="Hullámhossz" /> játékot
+        Wolfgang Warsch, Alex Hague, és Justin Vickers készítette.{" "}
         <Link
           href="https://github.com/cynicaloptimist/longwave"
-          text="Adapted for web"
+          text="Webre adaptálta"
         />{" "}
-        by Evan Bailey and Margarethe Schoen.
+        Evan Bailey és Margarethe Schoen. A felhasználói felület magyar fordítását {" "}
+        <Link
+          href="https://github.com/fodi/longwave-hu"
+          text="Fodi"
+        />{" "} készítette.
       </p>
       {/* we want referrer, so: */}
       {/* eslint-disable-next-line react/jsx-no-target-blank */}
       <a target="_blank" href="https://www.patreon.com/improvedinitiative">
         <img
           alt="Patreon logo"
-          title="Support us on Patreon!"
+          title="Evan Patreon oldala"
           src="./Digital-Patreon-Wordmark_FieryCoral.png"
           style={{ width: "150px", margin: 8 }}
         />

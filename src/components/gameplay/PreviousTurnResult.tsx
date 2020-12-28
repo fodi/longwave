@@ -23,7 +23,7 @@ export function PreviousTurnResult(props: TurnSummaryModel) {
   return (
     <div style={style}>
       <CenteredColumn>
-        <em>Previous Turn</em>
+        <em>Az előző kör</em>
       </CenteredColumn>
       <div
         style={{
@@ -38,7 +38,7 @@ export function PreviousTurnResult(props: TurnSummaryModel) {
         />
         <CenteredColumn>
           <div>
-            {props.clueGiverName}'s clue: <strong>{props.clue}</strong>
+            {props.clueGiverName} ezt adta meg: <strong>{props.clue}</strong>
           </div>
         </CenteredColumn>
       </div>

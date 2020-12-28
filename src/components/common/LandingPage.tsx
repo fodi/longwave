@@ -11,14 +11,14 @@ export function LandingPage() {
     <CenteredColumn>
       <LongwaveAppTitle />
       <Button
-        text="Create Room"
+        text="Szoba létrehozása"
         onClick={() => {
           history.push("/" + RandomFourCharacterString());
         }}
       />
       <p style={{ margin: 8 }}>
-        <strong>Longwave</strong> is an online, real-time adaptation of the{" "}
-        <em>Wavelength</em> board game. Best enjoyed with voice chat!
+        A <strong>Hosszúhullám</strong> egy online, valós időben játszható változata a{" "}
+        <em>Hullámhossz</em> nevű társasjátéknak.
       </p>
     </CenteredColumn>
   );

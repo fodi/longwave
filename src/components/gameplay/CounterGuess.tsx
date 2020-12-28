@@ -28,9 +28,9 @@ export function CounterGuess() {
         <Spectrum spectrumCard={spectrumCard} guessingValue={gameState.guess} />
         <CenteredColumn>
           <div>
-            {clueGiver.name}'s clue: <strong>{gameState.clue}</strong>
+            {clueGiver.name} ezt adta meg: <strong>{gameState.clue}</strong>
           </div>
-          <div>Waiting for {counterGuessTeamString} to guess left/right...</div>
+          <div>Várjuk, hogy a(z) {counterGuessTeamString} csapat tippeljen a bal/jobb irányra...</div>
         </CenteredColumn>
       </div>
     );
@@ -41,18 +41,18 @@ export function CounterGuess() {
       <Spectrum spectrumCard={spectrumCard} guessingValue={gameState.guess} />
       <CenteredColumn>
         <div>
-          {clueGiver.name}'s clue: <strong>{gameState.clue}</strong>
+          {clueGiver.name} ezt adta meg: <strong>{gameState.clue}</strong>
         </div>
       </CenteredColumn>
       <CenteredRow>
         <Button
-          text="Target is to the Left"
+          text="A cél ettől balra található"
           onClick={() =>
             setGameState(ScoreTeamRound(gameState, clueGiver.team, "left"))
           }
         />
         <Button
-          text="Target is to the Right"
+          text="A cél ettől jobbra található"
           onClick={() =>
             setGameState(ScoreTeamRound(gameState, clueGiver.team, "right"))
           }

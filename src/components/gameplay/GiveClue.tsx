@@ -36,7 +36,7 @@ export function GiveClue() {
           <Spectrum spectrumCard={spectrumCard} />
         </Animate>
         <CenteredColumn>
-          <div>Waiting for {clueGiver.name} to provide a clue...</div>
+          <div>Várjuk, hogy {clueGiver.name} kitaláljon valamit...</div>
         </CenteredColumn>
       </div>
     );
@@ -64,7 +64,7 @@ export function GiveClue() {
     <div>
       {gameState.gameType !== GameType.Cooperative && (
         <CenteredColumn style={{ alignItems: "flex-end" }}>
-          <Button text="Draw a different card" onClick={redrawCard} />
+          <Button text="Másik kártyát szeretnél?" onClick={redrawCard} />
         </CenteredColumn>
       )}
       <Animate animation="wipe-reveal-right">
@@ -77,7 +77,7 @@ export function GiveClue() {
         <CenteredRow>
           <input
             type="text"
-            placeholder="Clue..."
+            placeholder="Találj ki valamit..."
             ref={inputElement}
             onKeyDown={(event) => {
               if (event.key !== "Enter") {
@@ -91,20 +91,21 @@ export function GiveClue() {
           />
           <Info>
             <div>
-              Your clue should be some concept that lies on the provided
-              spectrum, conceptually located where the target is between the two
-              extremes. For example, "coffee" might be a good clue that lies on
-              a spectrum of "hot" to "cold".
+              Valami olyasmit találj ki, ami a megadott skálán helyezkedik el,
+              véleményed szerint ott, ahol a jelölő áll a két szélsőség
+              között. Például ha a spektrum két végén "édes" és "sós" van,
+              a jelölő középtájt, de az édeshez közelebb áll, írhatod azt,
+              hogy "Snickers". Lehetőleg
               <ul>
-                <li>Convey a single thought</li>
-                <li>Stay on topic</li>
-                <li>No numbers allowed</li>
-                <li>Be creative!</li>
+                <li>próblálj egyértelmű lenni,</li>
+                <li>maradj a témánál,</li>
+                <li>ne használj számokat</li>
+                <li>és légy kreatív!</li>
               </ul>
             </div>
           </Info>
         </CenteredRow>
-        <Button text="Submit Clue" onClick={submit} disabled={disableSubmit} />
+        <Button text="Küldés" onClick={submit} disabled={disableSubmit} />
       </CenteredColumn>
     </div>
   );

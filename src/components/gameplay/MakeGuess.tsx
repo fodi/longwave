@@ -33,9 +33,9 @@ export function MakeGuess() {
         <Spectrum spectrumCard={spectrumCard} guessingValue={gameState.guess} />
         <CenteredColumn>
           <div>
-            {clueGiver.name}'s clue: <strong>{gameState.clue}</strong>
+            {clueGiver.name} ezt adta meg: <strong>{gameState.clue}</strong>
           </div>
-          <div>Waiting for {guessingTeamString} to guess...</div>
+          <div>Várjuk a {guessingTeamString} tippjét...</div>
           {Object.keys(gameState.players).length < 2 && (
             <div
               style={{
@@ -44,8 +44,8 @@ export function MakeGuess() {
                 border: "1px solid black",
               }}
             >
-              <p>Invite other players to join the game.</p>
-              <p>Share this URL with them: {window.location.href}</p>
+              <p>Hívj meg másokat is a játékba.</p>
+              <p>Küldd el nekik ezt a linket: {window.location.href}</p>
             </div>
           )}
         </CenteredColumn>
@@ -66,11 +66,11 @@ export function MakeGuess() {
       />
       <CenteredColumn>
         <div>
-          {clueGiver.name}'s clue: <strong>{gameState.clue}</strong>
+          {clueGiver.name} ezt adta meg: <strong>{gameState.clue}</strong>
         </div>
         <div>
           <Button
-            text={`Submit Guess for ${TeamName(localPlayer.team)}`}
+            text={`${TeamName(localPlayer.team)} tippjének beküldése`}
             onClick={() => {
               RecordEvent("guess_submitted", {
                 spectrum_card: spectrumCard.join("|"),

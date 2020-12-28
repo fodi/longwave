@@ -7,12 +7,12 @@ import { JoinTeam } from "./JoinTeam";
 
 jest.useFakeTimers();
 
-test("Assigns player to the selected team", () => {
+test("Játékos hozzárendelése a kiválasztott csapathoz", () => {
   const gameState: GameState = {
     ...InitialGameState(),
     players: {
       playerId: {
-        name: "Player",
+        name: "Játékos",
         team: Team.Unset,
       },
     },
@@ -28,16 +28,16 @@ test("Assigns player to the selected team", () => {
   );
 
   const button = component
-    .getByText("LEFT BRAIN")
+    .getByText("BAL AGYFÉLTEKE")
     .parentNode?.querySelector("input")!;
-  expect(button.value).toEqual("Join");
+  expect(button.value).toEqual("Csatlakozás");
   fireEvent.click(button);
 
   expect(setState).toHaveBeenCalledWith({
     players: {
       playerId: {
         id: "playerId",
-        name: "Player",
+        name: "Játékos",
         team: Team.Left,
       },
     },
@@ -49,23 +49,23 @@ test("Shows current team members", () => {
     ...InitialGameState(),
     players: {
       playerId: {
-        name: "Player",
+        name: "Játékos",
         team: Team.Unset,
       },
       leftTeam1: {
-        name: "Left Team 1",
+        name: "Bal csapat 1",
         team: Team.Left,
       },
       leftTeam2: {
-        name: "Left Team 2",
+        name: "Bal csapat 2",
         team: Team.Left,
       },
       rightTeam1: {
-        name: "Right Team 1",
+        name: "Jobb csapat 1",
         team: Team.Right,
       },
       rightTeam2: {
-        name: "Right Team 2",
+        name: "Jobb csapat 2",
         team: Team.Right,
       },
     },
@@ -79,11 +79,11 @@ test("Shows current team members", () => {
     </GameModelContext.Provider>
   );
 
-  const leftBrain = within(component.getByText("LEFT BRAIN").parentElement!);
-  expect(leftBrain.getByText("Left Team 1")).toBeInTheDocument();
-  expect(leftBrain.getByText("Left Team 2")).toBeInTheDocument();
+  const leftBrain = within(component.getByText("BAL AGYFÉLTEKE").parentElement!);
+  expect(leftBrain.getByText("Bal csapat 1")).toBeInTheDocument();
+  expect(leftBrain.getByText("Bal csapat 2")).toBeInTheDocument();
 
-  const rightBrain = within(component.getByText("RIGHT BRAIN").parentElement!);
-  expect(rightBrain.getByText("Right Team 1")).toBeInTheDocument();
-  expect(rightBrain.getByText("Right Team 2")).toBeInTheDocument();
+  const rightBrain = within(component.getByText("JOBB AGYFÉLTEKE").parentElement!);
+  expect(rightBrain.getByText("Jobb csapat 1")).toBeInTheDocument();
+  expect(rightBrain.getByText("Jobb csapat 2")).toBeInTheDocument();
 });

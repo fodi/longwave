@@ -43,20 +43,20 @@ export function ViewScore() {
       />
       <CenteredColumn>
         <div>
-          {clueGiver.name}'s clue: <strong>{gameState.clue}</strong>
+          {clueGiver.name} ezt adta meg: <strong>{gameState.clue}</strong>
         </div>
-        <div>Score: {score} points!</div>
+        <div>A tippért {score} pont jár.</div>
         {gameState.gameType === GameType.Teams && (
           <div>
-            {TeamName(TeamReverse(clueGiver.team))} gets
+            A(z) {TeamName(TeamReverse(clueGiver.team))} csapat
             {wasCounterGuessCorrect
-              ? " 1 point for their correct counter guess."
-              : " 0 points for their counter guess."}
+              ? " kap egy bónusz pontot."
+              : " nem kap bónusz pontot."}
           </div>
         )}
         {bonusCoopTurn && (
           <div>
-            Your team earned a <strong>bonus turn!</strong>
+            A csapatod kap egy <strong>bónusz kört!</strong>
           </div>
         )}
         <NextTurnOrEndGame />
@@ -76,7 +76,7 @@ function NextTurnOrEndGame() {
 
   const resetButton = (
     <Button
-      text="Reset Game"
+      text="Játék újraindítása"
       onClick={() => {
         setGameState({
           ...InitialGameState(),
@@ -90,7 +90,7 @@ function NextTurnOrEndGame() {
   if (gameState.leftScore >= 10 && gameState.leftScore > gameState.rightScore) {
     return (
       <>
-        <div>{TeamName(Team.Left)} wins!</div>
+        <div>A nyertes csapat: {TeamName(Team.Left)}</div>
         {resetButton}
       </>
     );
@@ -102,7 +102,7 @@ function NextTurnOrEndGame() {
   ) {
     return (
       <>
-        <div>{TeamName(Team.Right)} wins!</div>
+        <div>A nyertes csapat: {TeamName(Team.Right)}</div>
         {resetButton}
       </>
     );
@@ -114,10 +114,10 @@ function NextTurnOrEndGame() {
   ) {
     return (
       <>
-        <div>Game Complete</div>
+        <div>Vége a játéknkak</div>
         <div>
-          Your team's final cooperative score:{" "}
-          <strong>{gameState.coopScore} POINTS</strong>
+          A csapatod kooperatív végeredménye:{" "}
+          <strong>{gameState.coopScore} pont</strong>
         </div>
         {resetButton}
       </>
@@ -171,16 +171,16 @@ function NextTurnOrEndGame() {
     <>
       {bonusTurn && (
         <CenteredRow>
-          <div>Catchup activated: {scoringTeamString} takes a bonus turn! </div>
+          <div>A(z) {scoringTeamString} csapat bónusz körben részesül! </div>
           <Info>
-            After a team scores a four-point round, they get a bonus turn if
-            they are still behind the other team.
+            Ha a vesztésre álló csapat egy körben négy pontot szerez,
+            bónusz kört nyer, hogy behozza lemaradását.
           </Info>
         </CenteredRow>
       )}
       {eligibleToDraw && (
         <Button
-          text="Draw next Spectrum Card"
+          text="Következő kártya"
           onClick={() => setGameState(NewRound(localPlayer.id, gameState))}
         />
       )}

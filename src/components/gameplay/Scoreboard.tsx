@@ -21,7 +21,7 @@ export function Scoreboard() {
   if (gameState.gameType === GameType.Freeplay) {
     return (
       <CenteredColumn style={style}>
-        <em>Free Play</em>
+        <em>Szabadjáték</em>
         <CenteredRow style={{ flexWrap: "wrap" }}>
           {Object.keys(gameState.players).map(toPlayerRow)}
         </CenteredRow>
@@ -33,11 +33,11 @@ export function Scoreboard() {
     const cardsRemaining = 7 + gameState.coopBonusTurns - gameState.turnsTaken;
     return (
       <CenteredColumn style={style}>
-        <em>Cooperative Score: {gameState.coopScore} POINTS</em>
+        <em>Közös pontszám: {gameState.coopScore}</em>
         <div>
           {cardsRemaining === 0
-            ? "Last Card!"
-            : "Cards remaining: " + cardsRemaining}
+            ? "Ez az utolsó kártya."
+            : "Még " + cardsRemaining + " kártya maradt."}
         </div>
         <CenteredRow style={{ flexWrap: "wrap" }}>
           {Object.keys(gameState.players).map(toPlayerRow)}
@@ -64,7 +64,7 @@ function TeamColumn(props: { team: Team; score: number }) {
   return (
     <CenteredColumn style={{ alignItems: "flex-start" }}>
       <div>
-        {TeamName(props.team)}: <AnimatableScore score={props.score} /> POINTS
+        {TeamName(props.team)}: <AnimatableScore score={props.score} /> pont
       </div>
       {members.map(toPlayerRow)}
     </CenteredColumn>

@@ -18,19 +18,19 @@ export function FakeRooms() {
     roundPhase: RoundPhase.PickTeams,
     players: {
       ul: {
-        name: "Upper Left",
+        name: "Bal fent",
         team: Team.Left,
       },
       ll: {
-        name: "Lower Left",
+        name: "Bal lent",
         team: Team.Left,
       },
       ur: {
-        name: "Upper Right",
+        name: "Jobb fent",
         team: Team.Right,
       },
       lr: {
-        name: "Lower Right",
+        name: "Jobb lent",
         team: Team.Right,
       },
     },
